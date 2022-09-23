@@ -51,7 +51,7 @@ console.log(PI);
 //los templates
 
 var nombre='Alejandro';
-var saludo= `Hola soy ${nombre}
-
-como estas?`;
+var saludo= `Hola soy ${nombre} como estas?`;
 console.log(saludo);
+
+
