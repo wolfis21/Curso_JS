@@ -1,0 +1,20 @@
+{
+  "name": "ejercicio_prueba",
+  "version": "1.0.0",
+  "description": "breaking bad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Practica",
+    "personajes",
+    "de",
+    "fandom"
+  ],
+  "author": "Isaac Saado",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}

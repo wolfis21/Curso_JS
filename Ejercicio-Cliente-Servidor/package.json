@@ -1,0 +1,20 @@
+{
+  "name": "ejercicio-cliente-servidor",
+  "version": "1.0.0",
+  "description": "practica cliente servidor js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "practica",
+    "modelo",
+    "cliente",
+    "servidor"
+  ],
+  "author": "Isaac Saado",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
