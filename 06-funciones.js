@@ -46,3 +46,8 @@ console.log(restar(2,2));
 var multiplicar = (a,b) => a*b;
 
 console.log(multiplicar(2,3));
+
+/* function self invoking */
+(function (){
+    console.log("ejecutando");
+})();
