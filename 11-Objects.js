@@ -98,3 +98,19 @@ console.log(personal.lang);
 personal.lang = 'en';
 console.log(personal.lang);
 console.log(personal.idioma);
+
+/* MANEJO DE CONSTRUCTORES EN POO */
+
+function Estudiante(nombre, apellido,email){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+
+}
+
+let estudiantePadre = new Estudiante('Isaac','Saado', 'isaac@gmail.com' );
+console.log(estudiantePadre);
+
+let otroEstu = new Estudiante('MAria', 'perez','kasdas@ksd');
+
+console.log(otroEstu);
