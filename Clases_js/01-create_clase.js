@@ -25,6 +25,16 @@ class Persona{
     set apellido(apellido){
         this._apellido = apellido;
     }
+    nombreCompleto(){
+        return this._nombre + ' ' + this._apellido;
+    }
+    //Sobreescribiendo de la clase padre (Object)
+    toString(){
+        //se aplica poliformismo (multiples formas en tiempo de ejecucion)
+        //el metodo se ejecuta depende si es una referencia de tipo padre
+        //o de tipo hijo
+        return this.nombreCompleto();
+    }
 }
 // clase hija
 class Empleado extends Persona{
@@ -39,13 +49,22 @@ class Empleado extends Persona{
     set departamento(departamento){
         this._departamento = departamento;
     }
+    //Sobreescritura
+    nombreCompleto(){
+        return super.nombreCompleto() + ', ' + this._departamento;
+    }
 }
 
 // Instancia de clase
 let persona1 = new Persona( 'Isaac', 'Saado');
-
+console.log(persona1.nombreCompleto());
 // persona1.nombre = 'Alejandro mas' //set
 // console.log(persona1.nombre); //get 
 
 let empleado1 = new Empleado('Maria', 'perez','biblioteca');
 console.log(empleado1);
+console.log(empleado1.nombreCompleto());
+    // metodo para poder ver en el navegador lo que tiene 
+    // definido el objeto por consola
+    //solo si la clase lo tiene definido 
+console.log(empleado1.toString());
