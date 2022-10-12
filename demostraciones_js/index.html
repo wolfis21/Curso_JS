@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //añadir canvas a html
+      var canvas = document.createElement("canvas");
+      canvas.width = 500;
+      canvas.height = 250;
+
+      var ctx = canvas.getContext("2d");
+      ctx.font = "30 px Cursive";
+      ctx.fillText("Hello world", 50, 50);
+
+      document.body.appendChild(canvas);
+
+      //Anadir SVG
+      var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.width = 500;
+      svg.height = 50;
+
+      var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      text.setAttribute("x", "0");
+      text.setAttribute("y", "50");
+      text.style.fontFamily = "Times New Roman";
+      text.style.fontSize = "50";
+
+      text.textContent = "Hello worldd!";
+      svg.appendChild(text);
+      document.body.appendChild(svg);
+
+      // uso de windows.confirm()
+      if (window.confirm("Are you sure you want to delete this?")) {
+        deleteItem(itemId);
+      }
+      
+    </script>
+  </body>
+</html>
