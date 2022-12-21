@@ -9,13 +9,10 @@
 class Persona{
     static contaPerson = 0; //atributos static, manejo similar como los metodos static
 
-    email = 'email default';
-
     constructor(nombre,apellido){
         this._nombre = nombre;
         this._apellido = apellido;
-        Persona.contaPerson++;
-        console.log('Cantidad de personas es: '+Persona.contaPerson);
+        this.idPersona = ++Persona.contaPerson;
     }
 //return valores
     get nombre(){
@@ -32,7 +29,7 @@ class Persona{
         this._apellido = apellido;
     }
     nombreCompleto(){
-        return this._nombre + ' ' + this._apellido;
+        return this.idPersona + ' ' + this._nombre + ' ' + this._apellido;
     }
     //Sobreescribiendo de la clase padre (Object)
     toString(){
@@ -65,25 +62,10 @@ class Empleado extends Persona{
     }
 }
 
-// Instancia de clase
-let persona1 = new Persona( 'Isaac', 'Saado');
-console.log(persona1.nombreCompleto());
-// persona1.nombre = 'Alejandro mas' //set
-// console.log(persona1.nombre); //get 
+let persona1 = new Persona ('Isaac','Saado');
 
-let empleado1 = new Empleado('Maria', 'perez','biblioteca');
-console.log(empleado1);
-console.log(empleado1.nombreCompleto());
-    // metodo para poder ver en el navegador lo que tiene 
-    // definido el objeto por consola
-    //solo si la clase lo tiene definido 
-console.log(empleado1.toString());
+console.log(persona1.toString());
 
-//--------------------------------------------- 21 / 12 / 22 ----------------------//
+let empleado = new Empleado ('Mariam', 'Bislick', 'Admistradora');
 
-//persona1.saludar(); No se puede llamar a un metodo static desde un objeto
-Persona.saludar();
-
-console.log(persona1.email); //se llama este atributo solo desde el objeto creado 
-console.log(empleado1.email);
-
+console.log(empleado.toString());
