@@ -1,25 +1,26 @@
+class Cliente extends Persona {
+  static contCliente = 0;
 
-class Cliente extends Persona{
+  constructor(fechaRegistro) {
+    this._idCliente = ++Cliente.contCliente;
+    this._fechaRegistro = fechaRegistro;
+  }
 
-    static contCliente = 0;
+  //metodo get
 
-    constructor(fechaRegistro){
-        this._idCliente = ++Cliente.contCliente;
-        this._fechaRegistro = fechaRegistro;
-    }
+  get fechaRegistro() {
+    return this._fechaRegistro;
+  }
 
-    //metodo get
+  //metodo set
 
-    get fechaRegistro(){return this._fechaRegistro;}
+  set fechaRegistro(fechaRegistro) {
+    this._fechaRegistro = fechaRegistro;
+  }
 
-    //metodo set
+  //toString
 
-    set fechaRegistro(fechaRegistro){this._fechaRegistro=fechaRegistro;}
-
-    //toString
-
-    toString(){
-        return super.toString + ' nacimiento en: ' + this._fechaRegistro;
-    }
-
+  toString() {
+    return super.toString + " nacimiento en: " + this._fechaRegistro;
+  }
 }
