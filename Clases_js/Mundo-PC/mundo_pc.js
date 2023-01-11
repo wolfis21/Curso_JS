@@ -31,7 +31,7 @@ class Raton extends DispositivoEntrada{
     }
 
     toString(){
-        return `Raton: [idRaton: ${this._idRaton}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca}]`;
+        return `[idRaton: ${this._idRaton}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca}]`;
     }
 }
 
@@ -44,7 +44,7 @@ class Teclado extends DispositivoEntrada{
     }
 
     toString(){
-        return `Teclado: [idTeclado: ${this._idTeclado}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca}]`;
+        return `[idTeclado: ${this._idTeclado}, tipoEntrada: ${this._tipoEntrada}, marca: ${this._marca}]`;
     }
 }
 
@@ -78,7 +78,7 @@ class Monitor{
    }
 
    toString(){
-    return `Monitor: [Marca: ${this._marca}, tamaño: ${this._tamaño}]`;
+    return `[idMonitor: ${this._idMonitor}, Marca: ${this._marca}, tamaño: ${this._tamaño}]`;
    }
    
 }
@@ -95,7 +95,31 @@ class Computadora{
         this._teclado = teclado;
     }
     toString(){
-        return `Computadora: [idComputer: ${this._idComputer}, nombre: ${this._nombre}, ${this._monitor}, ${this._raton}, ${this._teclado}]`;
+        return `Computadora: ${this._idComputer} - ${this._nombre} \nMonitor: [${this._monitor}] \nRaton: [${this._raton}] \nTeclado: [${this._teclado}]`;
+    }
+}
+
+class Orden {
+    static contOrdenes = 0;
+
+    constructor(){
+        this._idOrden = ++Orden.contOrdenes;
+        this._computadoras = [];
+    }
+
+    get idOrden(){
+        return this._idOrden;
+    }
+
+    aggComputer(computadora){
+        this._computadoras.push(computadora);
+    }
+
+    mostrarOrden(){
+        let computadoraOrden = '';
+        for (let computadora of this._computadoras){
+            computadoraOrden += `${computadora}`;
+        }
     }
 }
 
@@ -103,3 +127,4 @@ let computadora1 = new Computadora('HP',monitor1, raton1, teclado1);
 console.log(computadora1.toString());
 
 //agregar clase orden 
+
